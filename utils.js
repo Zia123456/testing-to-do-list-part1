@@ -18,6 +18,7 @@ class functionalty {
       },
     ];
     newArr.push(...task1);
+    
     newArr.push(...task2);
     return newArr.length;
   }

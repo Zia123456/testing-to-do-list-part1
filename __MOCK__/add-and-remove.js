@@ -94,6 +94,34 @@ class functionalty {
 
     return arr[index - 1].checked;
   }
+
+  static clearAll(checked) {
+    const arr = [
+      {
+        description: 'Task-1',
+        checked: true,
+        id: 1,
+      },
+      {
+        description: 'task-2',
+        checked: true,
+        id: 2,
+      },
+      {
+        description: 'task-3',
+        checked: true,
+        id: 3,
+      },
+    ];
+
+    for (let i = 0; i < arr.length; i += 1) {
+      if (arr[i].checked === checked) {
+        arr.splice(i, 1);
+      }
+    }
+
+    return arr.length;
+  }
 }
 
 module.exports = functionalty;

@@ -48,6 +48,80 @@ class functionalty {
 
     return arr.length;
   }
+
+  static edditTask(index, edditedDescription) {
+    const arr = [
+      {
+        description: 'Task-1',
+        checked: false,
+        id: 1,
+      },
+      {
+        description: 'task-2',
+        checked: false,
+        id: 2,
+      },
+    ];
+
+    for (let i = 0; i < arr.length; i += 1) {
+      if (arr[i].id === index) {
+        arr[i].description = edditedDescription;
+      }
+    }
+
+    return arr[index - 1].description;
+  }
+
+  static status(index, checked) {
+    const arr = [
+      {
+        description: 'Task-1',
+        checked: false,
+        id: 1,
+      },
+      {
+        description: 'task-2',
+        checked: true,
+        id: 2,
+      },
+    ];
+
+    for (let i = 0; i < arr.length; i += 1) {
+      if (arr[i].id === index) {
+        arr[i].checked = checked;
+      }
+    }
+
+    return arr[index - 1].checked;
+  }
+
+  static clearAll(checked) {
+    const arr = [
+      {
+        description: 'Task-1',
+        checked: true,
+        id: 1,
+      },
+      {
+        description: 'task-2',
+        checked: true,
+        id: 2,
+      },
+      {
+        description: 'task-3',
+        checked: true,
+        id: 3,
+      },
+    ];
+
+    for (let i = 0; i < arr.length; i += 1) {
+      if (arr[i].checked === checked) {
+        arr.splice(i, 1);
+      }
+    }
+
+    return arr.length;
+  }
 }
 
 module.exports = functionalty;

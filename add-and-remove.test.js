@@ -22,4 +22,39 @@ describe('Add and Remove', () => {
     // Assert
     expect(removetask).toBe(1);
   });
+
+  it('eddit description', () => {
+    // arrange
+    const index = 2;
+    const description = 'I eddited';
+
+    // act
+    const edditTask = Functionality.edditTask(index, description);
+
+    // assert
+    expect(edditTask).toMatch(/I eddited/);
+  });
+
+  it('check status', () => {
+    // arrange
+    const index = 1;
+    const checked = false;
+
+    // act
+    const status = Functionality.status(index, checked);
+
+    // assert
+    expect(status).toBeFalsy();
+  });
+
+  it('delete all completed tasks', () => {
+    // arrange
+    const checked = true;
+
+    // act
+    const clearAll = Functionality.clearAll(checked);
+
+    // assert
+    expect(clearAll).toBe(1);
+  });
 });
